@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+    	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+    	<script src="js/vue-resource.js" type="text/javascript" charset="utf-8"></script>
+   		<title>个人网站</title>
+	</head>
+	<body>
+		<div class="myinfo">
+			<div class="photo">
+				<img src="img/phot.png"/>
+			</div>
+			<div class="info">
+				<p><span>姓    名：</span>韦瑞瑞</p>
+				<p><span>出生年月：</span>1995.10 </p>
+				<p><span>毕业院校：</span>信阳职业技术学院</p>
+				<p class="major"><span>专   业：</span><br />　信息化人力资源管理</p>
+				<p class="job"><span>求职意向：</span><br />　人力资源专员</p>
+			</div>
+		</div>
+		<div class="main">
+			<ul class="nav">
+				<li class="show">首页</li>
+				<li>技能</li>
+				<li>关于我</li>
+				<li>联系我</li>
+			</ul>
+			<div class="active">
+				<div class="home">
+					<div class="p1">
+						<img src="img/img1.png"/>
+					</div>
+					<div class="p2">
+						<img src="img/img2.png"/>
+					</div>
+					
+					
+				</div>
+			</div>
+			<div>
+				<div class="home">
+					<h3>主修课程</h3>
+					<div class="modul">
+						<span>人力工作分析</span>
+						<span>人力资源规划</span>
+						<span>培训与开发</span>
+						<span>招募选拔与招聘实践</span>
+						<span>员工绩效考评与管理</span>
+						<span>劳动关系</span>
+					</div>
+					<h3>专业技能</h3>
+					<div class="pfo">
+						<p>办公自动化</p>
+						<p>秘书学与秘书实务</p>
+						<p>平面设计软件及案例</p>
+						<p>windows系统管理</p>
+						<p>职业素养、个人形象设计</p>
+						<p>心理学</p>
+						<p>熟悉员工招聘，绩效管理与考核流程</p>
+						<p>熟练运用word、excel等办公软件</p>
+					</div>
+					<h3>技能证书</h3>
+					<div class="ry">
+						<p>普通话证书</P>
+						<p>人力资源管理师三级证书</P>
+						<p>NIT证书</P>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="home">
+					<h3>教育背景</h3>
+					<div class="edu">
+						<p>
+							<span>2015.09-2018.07</span>
+							<span>信阳职业技术学院</span>
+							<span>信息化人力资源管理专业</span>
+						</p>
+						<p>
+							<span>2013.09-2015.07</span>
+							<span>洛宁第一高级中学 </span>
+							<span>理科</span>
+						</p>
+						<p>
+							<span>2010.09-2013.07</span>
+							<span>大原中学</span>
+							<span></span>
+						</p>
+					</div>
+					<h3>自我评价</h3>
+					<div class="ry pj">
+					<p>
+						性格温和谦虚，认真细致、踏实，肯吃苦耐劳，有较强的责任心和社会适应能力。具有良好的沟通能力。热爱团队活动，有较强的团队合作意识。对自己的未来有规划，正在努力提升自己的学历，选择通过自学考试来提升我的学历。
+					</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="home">
+					<div class="pfo">
+						<p>邮    箱：2392006552@qq.com </p>
+						<p>电    话：17737903696</p>
+						<p>微信：wrr951020</p>
+					</div>
+					<div class="weix">
+						<img src="img/wx.jpg"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			let navList = $(".nav li");
+			let divList = $(".main>div");
+//			console.log(navList.length) //4
+			for(var i=0,len=navList.length;i<len;i++){
+				navList[i].index = i;
+				navList[i].onclick = function(){
+					for(var i=0,len=navList.length;i<len;i++){
+						divList[i].className = "";
+					}
+					divList[this.index].className = "active";
+					for(var i=0,len=navList.length;i<len;i++){
+						navList[i].className = "";
+					}
+					navList[this.index].className = "show";
+				}
+			}
+		})
+		
+	</script>
+</html>
